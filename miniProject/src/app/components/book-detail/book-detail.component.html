@@ -1,0 +1,25 @@
+<div class="detail">
+  <div class="detail0">
+    <img src="{{imageUrl}}" class="imgDetail" alt="Sai đường dẫn"/>
+  </div>
+  <div class="detail1">
+    <h5>Book ID</h5>
+    <h5>Book Name:</h5>
+    <h5>Author:</h5>
+    <h5>Create Day:</h5>
+    <h5>Price:</h5>
+    <h5>Quantity:</h5>
+    <h5>Category Name:</h5>
+    <h5>Desciption:</h5>
+  </div>
+  <div class="detail2">
+    <h5>{{book?.id}}</h5>
+    <h5>{{book?.bookName}}</h5>
+    <h5>{{book?.author}}</h5>
+    <h5>{{book?.createdDate | date}}</h5>
+    <h5>{{book?.price | currency: 'VND': true}}</h5>
+    <h5>{{book?.quantity}}</h5>
+    <h5>{{book?.categoryName}}</h5>
+    <h5 style="text-align: justify;">{{book?.description}}</h5>
+  </div>
+</div>

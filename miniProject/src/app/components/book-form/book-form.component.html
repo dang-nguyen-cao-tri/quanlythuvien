@@ -1,0 +1,65 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+      <div class="form-group">
+        <label for="bookName">BookName</label>
+        <input type="text" [(ngModel)]="book.bookName"
+          class="form-control" id="bookName" name="bookName" placeholder="Enter bookName"
+          required #bookName="ngModel">
+      </div>
+      <div [hidden]="book.bookName !== ''" class="alert alert-danger">BookName is required</div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" [(ngModel)]="book.author" title="Not include number" pattern="[^0-9]+"
+          class="form-control" id="author" name="author" placeholder="Enter author"
+          required #author="ngModel">
+      </div>
+      <div [hidden]="book.author !== ''" class="alert alert-danger">Author is required</div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="text" [(ngModel)]="book.quantity" pattern="[0-9]{1,5}" title="Quantity should number"
+            class="form-control" id="quantity" name="quantity" placeholder="Enter quantity"
+            required #quantity="ngModel">
+        </div>
+        <div [hidden]="book.quantity !== ''" class="alert alert-danger">Quantity is required</div>
+
+        <div class="form-group">
+          <label for="price">Price (VNĐ)</label>
+          <input type="text" [(ngModel)]="book.price" pattern="[0-9]{1,10}"
+            class="form-control" id="price" name="price" placeholder="Enter price"
+            required #price="ngModel">
+        </div>
+        <div [hidden]="book.price !== ''" class="alert alert-danger">Price is required</div>
+
+        <div class="form-group">
+          <label for="period">Period</label>
+          <input type="text" [(ngModel)]="book.period" pattern="[0-9]{1,3}" title="Period is number"
+            class="form-control" id="period" name="period" placeholder="Enter period"
+            required #period="ngModel">
+        </div>
+        <div [hidden]="book.period !== ''" class="alert alert-danger">Period is required</div>
+        <div ></div>
+
+        <div class="form-group">
+          <label for="categoryName">Category Name</label>
+          <select  type="text" [(ngModel)]="book.categoryName" class="form-control" id="categoryName" name="categoryName">
+            <option *ngFor="let category of categoryList">{{category.typeName}} </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label rows="5" cols="50" for="description">Description</label>
+            <textarea rows="5" cols="50" [(ngModel)]="book.description"
+            class="form-control" id="description" name="description" placeholder="Enter description"
+            required #description="ngModel">
+            </textarea>
+        </div>
+        <div [hidden]="book.description !== ''" class="alert alert-danger">Description is required</div>
+
+      <button type="submit" [disabled]="!bookForm.form.valid" class="btn btn-info" >Submit</button>
+    </form>
+  </div>
+</div>
+

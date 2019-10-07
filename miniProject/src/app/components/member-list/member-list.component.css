@@ -1,0 +1,61 @@
+.btn-info{
+  background-color: #3b8fd9 ;
+  border-color: #3b8fd9;
+}
+.btn-info:hover{
+  background-color: #7cdff2;
+}
+
+.btn-info1{
+  background-color: #e3c624  ;
+  border-color:#f0da62 ;
+}
+.btn-info1:hover{
+  background-color:#f0da62 ;
+}
+
+.btn-info2{
+  background-color:   #f7344e;
+  border-color: #f26376;
+}
+.btn-info2:hover{
+  background-color: #f26376;
+}
+
+.btn-info0{
+  background-color:  #1c9c51 ;
+  border-color: #24d46d ;
+}
+.btn-info0:hover{
+  background-color: #24d46d ;
+}
+.btn-info4{
+  background-color: white ;
+  text-align: center;
+  color: #17a2b8;
+  border-radius: 5px;
+  border: 2px solid #17a2b8;
+  width: 60px;
+  margin-right: 5px;
+}
+.nhap{
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height:130px;
+  background-image: url("../../../assets/img/111.jpg");
+  display: inline-block;
+  background-repeat: no-repeat;
+  animation:  myAnimation2 4s ease-out infinite alternate;
+  position: relative;
+}
+@keyframes myAnimation2 {
+  from {left: 320px;}
+  to {left: 0px;}
+}
+.nhap1{
+  width: 30%;
+  margin: 0 auto;
+  height: 130px;
+  display: inline-block;
+}

@@ -1,0 +1,32 @@
+<div class="card my-5">
+    <div class="card-body">
+        <form class="form-inline md-form mr-auto mb-4" style="float: right">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #addname>
+            <button class="btn-info4" type="submit" >
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">BookName</th>
+            <th scope="col">MemberName</th>
+            <th scope="col">CreatedDate</th>
+            <th scope="col">ExpirationDate</th>
+            <th scope="col">ReturnDate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of infos">
+            <td>{{ info.id}}</td>
+            <td>{{ info.bookName }}</td>
+            <td>{{ info.memberName }}</td>
+            <td>{{ info.borrowDate | date }}</td>
+            <td>{{ info.expirationDate | date}}</td>
+            <td>{{ info.returnDate | date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

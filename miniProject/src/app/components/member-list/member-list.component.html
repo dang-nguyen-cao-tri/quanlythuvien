@@ -1,0 +1,45 @@
+<div class="card my-5">
+  <div class="card-body">
+      <div class="nhap">
+
+        </div>
+        <div class="nhap1" style="float: right">
+            <form class="form-inline md-form mr-auto mb-4"  style="float: right; margin: auto 0px; height: 100%;">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #addname>
+                <button class="btn-info4" type="submit" >
+                    <i class="fa fa-search"></i>
+                </button>
+              </form>
+        </div>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Gender</th>
+          <th scope="col">BirthDay</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members">
+          <td>{{ member.id}}</td>
+          <td>{{ member.name }}</td>
+          <td>{{ member.gender}}</td>
+          <td>{{ member.birthDay | date}} </td>
+          <td>{{ member.email }}</td>
+          <td>
+            <button type="button" class="btn btn-info1" (click)= "editMember(member.id)" title="Edit member">
+              <i class="fa fa-edit" ></i>
+            </button> |
+            <button type="button" class="btn btn-info2" (click)= "deleteMember(member.id)" title="Delete member">
+                <i class="fa fa-trash-o" ></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <li class="list-inline-item"><a routerLink="/editmember/0" class="btn btn-info">Add Member</a></li>
+  </div>
+</div>

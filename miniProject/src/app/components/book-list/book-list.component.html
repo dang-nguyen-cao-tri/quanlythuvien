@@ -1,0 +1,49 @@
+<div class="card my-5">
+  <div class="card-body">
+    <div class="nhap">
+
+    </div>
+    <div class="nhap1" style="float: right">
+        <form class="form-inline md-form mr-auto mb-4"  style="float: right; margin: auto 0px; height: 100%;">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #addname>
+            <button class="btn-info4" type="submit" (click)="searchBookByName(addname.value)" >
+                <i class="fa fa-search"></i>
+            </button>
+          </form>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">BookName</th>
+          <th scope="col">Author</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Period</th>
+          <th scope="col">CategoryName</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.id}}</td>
+          <td>{{ book.bookName }}</td>
+          <td>{{ book.author}}</td>
+          <td>{{ book.quantity }}</td>
+          <td>{{ book.period }}</td>
+          <td>{{ book.categoryName}}</td>
+          <td>
+            <button type="button" class="btn btn-info0" (click)= "detailBook(book.id)" title="Detail book">
+                <i class="fa fa-info-circle" ></i></button>
+            | <button  class="btn btn-info1" (click)= "editBook(book.id)" title="Edit book"><i class="fa fa-edit" ></i></button>
+            | <button class="btn btn-info2" (click)= "deleteBook(book.id)" title="Delete book">
+                <i class="fa fa-trash-o" ></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <li class="list-inline-item"><a routerLink="/editbook/0" class="btn btn-info">Add Book</a></li>
+    <li class="list-inline-item item1"><a href="http://192.168.241.179:8081/printreport" class="btn btn-info">Print All</a></li>
+  </div>
+</div>
